@@ -3,20 +3,27 @@
 
 void main()
 {
- int n,i,divisible;
+ int n,i,prime=1;
+ printf("Enter any integer number:);
  scanf("%d",&n);
  
- divisible=0;
- for(i=2;i<n/2;i++)  if(n%i==0)
+ prime=1;
+ 
+ if(n==2)
+ {
+  prime=1;
+ }
+ else if(n>2)for(i=3;i<(n/i-1);i+=2)  
+ {
+  if(n%i==0)
   {
-   divisible=1;
+   prime=0;
    break;
-  }
-  
- if(divisible)
- printf("\n%d is not a prime number",n);
+  }  
+ }
  
+ if(prime)
+ printf("\n%d is a prime number",n); 
  else
- printf("\n%d is a prime number",n);
- 
+ printf("\n%d is not a prime number",n); 
 }
